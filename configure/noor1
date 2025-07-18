@@ -1,0 +1,44 @@
+const mysql = require('mysql2');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
+
+// Middleware to parse JSON
+app.use(bodyParser.json());
+
+// MySQL connection
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "NoorpreetKaur",
+    database: "noor",
+    port: 3306
+});
+
+connection.connect((err) => {
+    if (err) {
+        console.error("❌ Error connecting to MySQL:", err.message);
+        return;
+    }
+    console.log("✅ Connected to MySQL database!");
+});
+
+// ✅ POST API to insert data into `item` table
+app.post('/api/users', (req, res) => {
+    const { name, email } = req.body; // Example fields
+    const sql = 'INSERT INTO item (name, email) VALUES (?, ?)';
+    
+    connection.query(sql, [name, email], (err, result) => {
+        if (err) {
+            console.error("❌ Insert error:", err.message);
+            return res.status(500).json({ error: 'Database insert error' });
+        }
+        res.json({ message: '✅ User added successfully!', id: result.insertId });
+    });
+});
+
+// Start server
+app.listen(port, () => {
+    console.log(`🚀 Server running at http://localhost:${port}`);
+});
