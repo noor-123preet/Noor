@@ -10,6 +10,8 @@
   <label for="lname">Last name:</label><br>G
   <input type="text" id="lname" name="lname" value="anttal" 
   ><br><br>
+  <label> hlllo</label>
+  <!-- <label> helo world</label> -->
   <input type="submit" value="Submit">
 </form> 
 
