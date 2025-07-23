@@ -9,12 +9,17 @@
   <input type="text" id="fname" name="fname" value="John"><br>
 <<<<<<< HEAD
   <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="noorantaaall"><br><br>
+  <input type="text" id="lname" name="lname" value="lovejot"><br><br>
   <label>hello</label>
 =======
   <label for="lname">Last name:</label><br>G
   <input type="text" id="lname" name="lname" value="anttal" 
   ><br><br>
+<<<<<<< HEAD
+>>>>>>> master
+=======
+  <label> hlllo</label>
+  <!-- <label> helo world</label> -->
 >>>>>>> master
   <input type="submit" value="Submit">
 </form> 
